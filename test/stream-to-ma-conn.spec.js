@@ -7,6 +7,8 @@ const expect = chai.expect
 chai.use(dirtyChai)
 
 const pair = require('it-pair')
+const pipe = require('it-pipe')
+const { collect } = require('streaming-iterables')
 const multiaddr = require('multiaddr')
 
 const streamToMaConn = require('../src/stream-to-ma-conn')
@@ -33,6 +35,22 @@ describe('Convert stream into a multiaddr connection', () => {
     expect(maConn.timeline.close).to.not.exist()
 
     maConn.close()
+    expect(maConn.timeline.close).to.exist()
+  })
+
+  it('can stream data over the multiaddr connection', async () => {
+    const stream = pair()
+    const maConn = streamToMaConn({ stream })
+
+    const data = 'hey'
+    const streamData = await pipe(
+      [data],
+      maConn,
+      collect
+    )
+
+    expect(streamData).to.eql([data])
+    // underlying stream end closes the connection
     expect(maConn.timeline.close).to.exist()
   })
 })
