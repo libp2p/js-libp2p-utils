@@ -29,11 +29,15 @@
   },
   "homepage": "https://github.com/libp2p/js-libp2p-utils#readme",
   "devDependencies": {
-    "aegir": "^20.3.1",
+    "aegir": "^20.6.0",
     "chai": "^4.2.0",
-    "dirty-chai": "^2.0.1"
+    "dirty-chai": "^2.0.1",
+    "it-pair": "^1.0.0",
+    "multiaddr": "^7.3.0"
   },
   "dependencies": {
+    "abortable-iterator": "^3.0.0",
+    "debug": "^4.1.1",
     "err-code": "^2.0.0",
     "ip-address": "^6.1.0",
     "multiaddr": "^7.1.0"
