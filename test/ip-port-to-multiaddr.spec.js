@@ -33,18 +33,18 @@ describe('IP and port to Multiaddr', () => {
   })
 
   it('throws for missing IP address', () => {
-    expect(() => toMultiaddr()).to.throw('invalid ip')
+    expect(() => toMultiaddr()).to.throw('invalid ip provided')
   })
 
   it('throws for invalid IP address', () => {
     const ip = 'aewmrn4awoew'
     const port = '234'
-    expect(() => toMultiaddr(ip, port)).to.throw('invalid ip')
+    expect(() => toMultiaddr(ip, port)).to.throw('invalid ip:port for creating a multiaddr')
   })
 
   it('throws for invalid port', () => {
     const ip = '127.0.0.1'
     const port = 'garbage'
-    expect(() => toMultiaddr(ip, port)).to.throw('invalid port')
+    expect(() => toMultiaddr(ip, port)).to.throw('invalid port provided')
   })
 })
