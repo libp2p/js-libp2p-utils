@@ -39,7 +39,7 @@
     "debug": "^4.1.1",
     "err-code": "^2.0.3",
     "ip-address": "^6.1.0",
-    "multiaddr": "multiformats/js-multiaddr#fix/replace-node-buffers-with-uint8arrays"
+    "multiaddr": "^8.0.0"
   },
   "contributors": [
     "Vasco Santos <vasco.santos@moxy.studio>"
