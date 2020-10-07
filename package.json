@@ -39,6 +39,7 @@
     "debug": "^4.2.0",
     "err-code": "^2.0.3",
     "ip-address": "^6.1.0",
+    "is-loopback-addr": "^1.0.0",
     "multiaddr": "^8.0.0",
     "private-ip": "^1.0.5"
   },
