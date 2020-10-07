@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/libp2p/js-libp2p-utils#readme",
   "devDependencies": {
-    "aegir": "^26.0.0",
+    "aegir": "^27.0.0",
     "it-pair": "^1.0.0",
     "it-pipe": "^1.1.0",
     "streaming-iterables": "^5.0.3"

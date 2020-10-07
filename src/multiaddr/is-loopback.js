@@ -4,6 +4,7 @@ const isLoopbackAddr = require('is-loopback-addr')
 
 /**
  * Check if a given multiaddr is a loopback address.
+ *
  * @param {Multiaddr} ma
  * @returns {boolean}
  */
