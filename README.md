@@ -44,19 +44,19 @@ const ma = ipAndPortToMultiaddr('127.0.0.1', 9000)
 
 Check if a given multiaddr is a loopback address.
 
-##### Parameters
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | ma | `Multiaddr` | multiaddr to verify |
 
-##### Returns
+#### Returns
 
 | Type | Description |
 |------|-------------|
 | `boolean` | returns true if multiaddr is a loopback address, false otherwise |
 
-##### Example
+#### Example
 
 ```js
 const multiaddr = require('multiaddr')
@@ -66,23 +66,23 @@ const ma = multiaddr('/ip4/127.0.0.1/tcp/1000')
 isMultiaddrLoopbackAddrs = isLoopback(ma)
 ```
 
-#### multiaddr `.isPrivate(ma)`
+### multiaddr `.isPrivate(ma)`
 
 Check if a given multiaddr has a private address.
 
-##### Parameters
+#### Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | ma | `Multiaddr` | multiaddr to verify |
 
-##### Returns
+#### Returns
 
 | Type | Description |
 |------|-------------|
 | `boolean` | returns true if multiaddr is a private address, false otherwise |
 
-##### Example
+#### Example
 
 ```js
 const multiaddr = require('multiaddr')
