@@ -45,7 +45,7 @@ Sort given addresses by putting public addresses first. In case of equality, a c
 
 ```js
 const multiaddr = require('multiaddr')
-const { publicAddressesFirst } = require('../src/address-sort')
+const { publicAddressesFirst } = require('libp2p-utils/src/address-sort')
 
 const addresses = [
     {

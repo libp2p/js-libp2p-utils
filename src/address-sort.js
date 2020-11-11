@@ -5,7 +5,7 @@ const isPrivate = require('./multiaddr/is-private')
 /**
  * Compare function for array.sort().
  * This sort aims to move the private adresses to the end of the array.
- * In case of equality, a cerified address will come first.
+ * In case of equality, a certified address will come first.
  *
  * @param {Address} a
  * @param {Address} b
