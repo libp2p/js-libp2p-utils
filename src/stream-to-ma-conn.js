@@ -1,14 +1,25 @@
 'use strict'
 
 const abortable = require('abortable-iterator')
-const log = require('debug')('libp2p:stream:converter')
+const debug = require('debug')
+const log = debug('libp2p:stream:converter')
+
+/**
+ * @typedef {import('multiaddr')} Multiaddr
+ * @typedef {import('libp2p-interfaces/src/stream-muxer/types').MuxedStream} MuxedStream
+ *
+ * @typedef {Object} Timeline
+ * @property {number} open - connection opening timestamp.
+ * @property {number} [upgraded] - connection upgraded timestamp.
+ * @property {number} [close]
+ */
 
 /**
  * Convert a duplex iterable into a MultiaddrConnection.
  * https://github.com/libp2p/interface-transport#multiaddrconnection
  *
  * @param {object} streamProperties
- * @param {DuplexStream} streamProperties.stream
+ * @param {MuxedStream} streamProperties.stream
  * @param {Multiaddr} streamProperties.remoteAddr
  * @param {Multiaddr} streamProperties.localAddr
  * @param {object} [options]
@@ -17,8 +28,12 @@ const log = require('debug')('libp2p:stream:converter')
 function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) {
   const { sink, source } = stream
   const maConn = {
+    /**
+     * @param {Uint8Array} source
+     */
     async sink (source) {
       if (options.signal) {
+        // @ts-ignore abortable has no type definitions
         source = abortable(source, options.signal)
       }
 
@@ -35,15 +50,16 @@ function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) 
       }
       close()
     },
-
+    // @ts-ignore abortable has no type definitions
     source: options.signal ? abortable(source, options.signal) : source,
     conn: stream,
     localAddr,
     remoteAddr,
-    timeline: { open: Date.now() },
+    /** @type {Timeline} */
+    timeline: { open: Date.now(), close: undefined },
 
     close () {
-      sink([])
+      sink(new Uint8Array(0))
       close()
     }
   }
