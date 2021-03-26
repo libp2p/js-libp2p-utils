@@ -13,6 +13,10 @@
       ]
     }
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "prepare": "aegir build --no-bundle",
     "test": "aegir test",
