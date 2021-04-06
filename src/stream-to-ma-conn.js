@@ -34,7 +34,7 @@ function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) 
      */
     async sink (source) {
       if (options.signal) {
-        // @ts-ignore abortable has no type definitions
+        // @ts-ignore ts infers source template will be a number
         source = abortable(source, options.signal)
       }
 

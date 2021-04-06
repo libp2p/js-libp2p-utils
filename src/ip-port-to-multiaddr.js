@@ -21,8 +21,9 @@ function ipPortToMultiaddr (ip, port) {
     throw errCode(new Error(`invalid ip provided: ${ip}`), errors.ERR_INVALID_IP_PARAMETER)
   }
 
-  // @ts-ignore parseInt expects only string
-  port = parseInt(port)
+  if (typeof port === 'string') {
+    port = parseInt(port)
+  }
 
   if (isNaN(port)) {
     throw errCode(new Error(`invalid port provided: ${port}`), errors.ERR_INVALID_PORT_PARAMETER)
