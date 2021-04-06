@@ -1,6 +1,6 @@
 'use strict'
 
-const abortable = require('abortable-iterator')
+const { source: abortable } = require('abortable-iterator')
 const debug = require('debug')
 const log = debug('libp2p:stream:converter')
 
@@ -25,6 +25,7 @@ const log = debug('libp2p:stream:converter')
  * @param {Multiaddr} streamProperties.localAddr
  * @param {object} [options]
  * @param {AbortSignal} [options.signal]
+ * @returns {MultiaddrConnection}
  */
 function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) {
   const { sink, source } = stream
@@ -51,7 +52,6 @@ function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) 
       }
       close()
     },
-    // @ts-ignore abortable has no type definitions
     source: options.signal ? abortable(source, options.signal) : source,
     conn: stream,
     localAddr,
