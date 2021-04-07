@@ -6,7 +6,6 @@ const log = debug('libp2p:stream:converter')
 
 /**
  * @typedef {import('multiaddr')} Multiaddr
- * @typedef {import('libp2p-interfaces/src/transport/types').MultiaddrConnection} MultiaddrConnection
  * @typedef {import('libp2p-interfaces/src/stream-muxer/types').MuxedStream} MuxedStream
  *
  * @typedef {Object} Timeline
@@ -25,7 +24,7 @@ const log = debug('libp2p:stream:converter')
  * @param {Multiaddr} streamProperties.localAddr
  * @param {object} [options]
  * @param {AbortSignal} [options.signal]
- * @returns {MultiaddrConnection}
+ * @returns {import('libp2p-interfaces/src/transport/types').MultiaddrConnection}
  */
 function streamToMaConnection ({ stream, remoteAddr, localAddr }, options = {}) {
   const { sink, source } = stream
