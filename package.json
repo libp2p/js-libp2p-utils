@@ -57,7 +57,7 @@
     "err-code": "^3.0.1",
     "ip-address": "^7.1.0",
     "is-loopback-addr": "^1.0.0",
-    "multiaddr": "^9.0.1",
+    "multiaddr": "multiformats/js-multiaddr#chore/update-to-new-multiformats",
     "private-ip": "^2.1.1"
   },
   "contributors": [
