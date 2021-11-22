@@ -1,10 +1,8 @@
 /* eslint-env mocha */
-'use strict'
 
-const { expect } = require('aegir/utils/chai')
-const { Multiaddr } = require('multiaddr')
-
-const isPrivate = require('../../src/multiaddr/is-private')
+import { expect } from 'aegir/utils/chai.js'
+import { Multiaddr } from 'multiaddr'
+import { isPrivate } from '../../src/multiaddr/is-private.js'
 
 describe('multiaddr isPrivate', () => {
   it('identifies private ip4 multiaddrs', () => {

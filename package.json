@@ -3,8 +3,27 @@
   "version": "0.4.1",
   "description": "Package to aggregate shared logic and dependencies for the libp2p ecosystem",
   "leadMaintainer": "Vasco Santos <santos.vasco10@gmail.com>",
-  "main": "src/index.js",
-  "types": "dist/src/index.d.ts",
+  "type": "module",
+  "exports": {
+    "multiaddr/is-loopback": {
+      "import": "./dist/src/multiaddr/is-loopback.js"
+    },
+    "multiaddr/is-private": {
+      "import": "./dist/src/multiaddr/is-private.js"
+    },
+    "address-sort": {
+      "import": "./dist/src/address-sort.js"
+    },
+    "array-equals": {
+      "import": "./dist/src/array-equals.js"
+    },
+    "ip-port-to-multiaddr": {
+      "import": "./dist/src/ip-port-to-multiaddr.js"
+    },
+    "stream-to-ma-conn": {
+      "import": "./dist/src/stream-to-ma-connr.js"
+    }
+  },
   "typesVersions": {
     "*": {
       "src/*": [
@@ -18,17 +37,16 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "aegir build --no-bundle",
-    "test": "aegir test",
-    "test:browser": "aegir test -t browser",
-    "test:node": "aegir test -t node",
-    "test:electron": "aegir test -t electron-main",
-    "test:electron-renderer": "aegir test -t electron-renderer",
+    "pretest": "npm run build",
+    "test": "aegir test -f ./dist/test/*.js",
+    "test:browser": "aegir test -t browser -f ./dist/test/*.js",
+    "test:node": "aegir test -t node -f ./dist/test/*.js",
+    "test:electron": "aegir test -t electron-main -f ./dist/test/*.js",
     "lint": "aegir lint",
     "release": "aegir release --docs",
     "release-minor": "aegir release --target node --type minor --docs",
     "release-major": "aegir release --type major --docs",
-    "build": "aegir build"
+    "build": "tsc"
   },
   "pre-push": [
     "lint"
@@ -44,10 +62,10 @@
   "homepage": "https://github.com/libp2p/js-libp2p-utils#readme",
   "devDependencies": {
     "@types/debug": "^4.1.5",
-    "aegir": "^33.0.0",
+    "aegir": "^36.0.0",
     "it-pair": "^1.0.0",
     "it-pipe": "^1.1.0",
-    "libp2p-interfaces": "^1.0.0",
+    "libp2p-interfaces": "^2.0.0",
     "streaming-iterables": "^6.0.0",
     "util": "^0.12.3"
   },
