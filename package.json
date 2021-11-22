@@ -47,11 +47,8 @@
     "release-minor": "aegir release --target node --type minor --docs",
     "release-major": "aegir release --type major --docs",
     "build": "tsc",
-    "dep-check": "aegir dep-check"
+    "dep-check": "aegir dep-check dist/src/**/*.js dist/test/**/*.js"
   },
-  "pre-push": [
-    "lint"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/libp2p/js-libp2p-utils.git"
