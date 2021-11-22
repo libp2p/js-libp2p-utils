@@ -13,10 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm install
-    - run: npx aegir lint
-    - run: npx aegir ts -p check
-    - run: npx aegir build
-    - run: npx aegir dep-check
+    - run: npm run lint
+    - run: npm run build
+    - run: npm run dep-check
     - uses: ipfs/aegir/actions/bundle-size@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
