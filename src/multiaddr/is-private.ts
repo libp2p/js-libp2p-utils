@@ -7,5 +7,5 @@ import isIpPrivate from 'private-ip'
 export function isPrivate (ma: Multiaddr) {
   const { address } = ma.nodeAddress()
 
-  return isIpPrivate(address) === true
+  return Boolean(isIpPrivate(address))
 }
