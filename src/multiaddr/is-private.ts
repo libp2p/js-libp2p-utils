@@ -1,4 +1,4 @@
-import type { Multiaddr } from 'multiaddr'
+import type { Multiaddr } from '@multiformats/multiaddr'
 import isIpPrivate from 'private-ip'
 
 /**
@@ -7,5 +7,5 @@ import isIpPrivate from 'private-ip'
 export function isPrivate (ma: Multiaddr) {
   const { address } = ma.nodeAddress()
 
-  return isIpPrivate(address)
+  return isIpPrivate(address) === true
 }

@@ -1,5 +1,5 @@
 import debug from 'debug'
-import { Multiaddr } from 'multiaddr'
+import { Multiaddr } from '@multiformats/multiaddr'
 import errCode from 'err-code'
 import { Address4, Address6 } from 'ip-address'
 

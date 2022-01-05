@@ -1,4 +1,4 @@
-import type { Multiaddr } from 'multiaddr'
+import type { Multiaddr } from '@multiformats/multiaddr'
 import { isPrivate } from './multiaddr/is-private.js'
 
 interface Address {

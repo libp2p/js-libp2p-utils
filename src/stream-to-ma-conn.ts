@@ -1,8 +1,8 @@
 import { source as abortable } from 'abortable-iterator'
 import debug from 'debug'
-import type { MuxedStream } from 'libp2p-interfaces/stream-muxer'
-import type { Multiaddr } from 'multiaddr'
-import type { MultiaddrConnection } from 'libp2p-interfaces/transport'
+import type { MuxedStream } from '@libp2p/interfaces/stream-muxer'
+import type { Multiaddr } from '@multiformats/multiaddr'
+import type { MultiaddrConnection } from '@libp2p/interfaces/transport'
 
 const log = debug('libp2p:stream:converter')
 
@@ -74,7 +74,9 @@ export function streamToMaConnection (props: StreamProperties, options: StreamOp
     /** @type {Timeline} */
     timeline: { open: Date.now(), close: undefined },
     async close () {
-      await sink([new Uint8Array(0)])
+      await sink(async function * () {
+        yield new Uint8Array(0)
+      }())
       await close()
     }
   }

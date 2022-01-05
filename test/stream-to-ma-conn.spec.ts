@@ -5,7 +5,7 @@ import { expect } from 'aegir/utils/chai.js'
 import pair from 'it-pair'
 import pipe from 'it-pipe'
 import { collect } from 'streaming-iterables'
-import { Multiaddr } from 'multiaddr'
+import { Multiaddr } from '@multiformats/multiaddr'
 import { streamToMaConnection } from '../src/stream-to-ma-conn.js'
 
 describe('Convert stream into a multiaddr connection', () => {

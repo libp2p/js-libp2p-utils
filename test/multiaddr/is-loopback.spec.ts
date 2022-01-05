@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import { expect } from 'aegir/utils/chai.js'
-import { Multiaddr } from 'multiaddr'
+import { Multiaddr } from '@multiformats/multiaddr'
 import { isLoopback } from '../../src/multiaddr/is-loopback.js'
 
 describe('multiaddr isLoopback', () => {

@@ -1,5 +1,5 @@
 {
-  "name": "libp2p-utils",
+  "name": "@libp2p/utils",
   "version": "0.4.1",
   "description": "Package to aggregate shared logic and dependencies for the libp2p ecosystem",
   "leadMaintainer": "Vasco Santos <santos.vasco10@gmail.com>",
@@ -40,46 +40,47 @@
   },
   "files": [
     "src",
-    "dist"
+    "dist/src"
   ],
   "scripts": {
-    "pretest": "npm run build",
-    "test": "aegir test -f ./dist/test/*.js",
-    "test:browser": "aegir test -t browser -f ./dist/test/*.js",
-    "test:node": "aegir test -t node -f ./dist/test/*.js",
-    "test:electron": "aegir test -t electron-main -f ./dist/test/*.js",
-    "lint": "aegir ts -p check && aegir lint",
-    "release": "aegir release --docs",
-    "release-minor": "aegir release --target node --type minor --docs",
-    "release-major": "aegir release --type major --docs",
+    "lint": "aegir lint",
+    "dep-check": "aegir dep-check dist/src/**/*.js dist/test/**/*.js",
     "build": "tsc",
-    "dep-check": "aegir dep-check dist/src/**/*.js dist/test/**/*.js"
+    "pretest": "npm run build",
+    "test": "aegir test -f ./dist/test/**/*.js",
+    "test:chrome": "npm run test -- -t browser",
+    "test:chrome-webworker": "npm run test -- -t webworker",
+    "test:firefox": "npm run test -- -t browser -- --browser firefox",
+    "test:firefox-webworker": "npm run test -- -t webworker -- --browser firefox",
+    "test:node": "npm run test -- -t node --cov",
+    "test:electron-main": "npm run test -- -t electron-main",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/libp2p/js-libp2p-utils.git"
   },
-  "license": "MIT",
+  "license": "(Apache-2.0 OR MIT)",
   "bugs": {
     "url": "https://github.com/libp2p/js-libp2p-utils/issues"
   },
   "homepage": "https://github.com/libp2p/js-libp2p-utils#readme",
   "devDependencies": {
+    "@libp2p/interfaces": "^0.2.0",
     "@types/debug": "^4.1.5",
-    "aegir": "^36.0.0",
+    "aegir": "^36.1.2",
     "it-pair": "^1.0.0",
     "it-pipe": "^1.1.0",
-    "libp2p-interfaces": "^2.0.0",
     "streaming-iterables": "^6.0.0",
     "util": "^0.12.3"
   },
   "dependencies": {
+    "@multiformats/multiaddr": "^10.1.1",
     "abortable-iterator": "^3.0.0",
     "debug": "^4.3.0",
     "err-code": "^3.0.1",
     "ip-address": "^8.0.0",
     "is-loopback-addr": "^1.0.0",
-    "multiaddr": "^10.0.0",
     "private-ip": "^2.1.1"
   },
   "contributors": [

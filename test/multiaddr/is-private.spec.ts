@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import { expect } from 'aegir/utils/chai.js'
-import { Multiaddr } from 'multiaddr'
+import { Multiaddr } from '@multiformats/multiaddr'
 import { isPrivate } from '../../src/multiaddr/is-private.js'
 
 describe('multiaddr isPrivate', () => {
@@ -45,7 +45,7 @@ describe('multiaddr isPrivate', () => {
     })
   })
 
-  it('identifies  other multiaddrs as not private addresses', () => {
+  it('identifies other multiaddrs as not private addresses', () => {
     [
       new Multiaddr('/dns4/wss0.bootstrap.libp2p.io/tcp/443'),
       new Multiaddr('/dns6/wss0.bootstrap.libp2p.io/tcp/443')
