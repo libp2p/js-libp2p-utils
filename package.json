@@ -75,11 +75,11 @@
     "util": "^0.12.3"
   },
   "dependencies": {
+    "@achingbrain/ip-address": "^8.1.0",
     "@multiformats/multiaddr": "^10.1.1",
     "abortable-iterator": "^3.0.0",
     "debug": "^4.3.0",
     "err-code": "^3.0.1",
-    "ip-address": "^8.0.0",
     "is-loopback-addr": "^1.0.0",
     "private-ip": "^2.1.1"
   },
