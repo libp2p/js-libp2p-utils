@@ -178,7 +178,7 @@
     "@libp2p/interfaces": "^0.2.0",
     "@types/debug": "^4.1.5",
     "aegir": "^36.1.2",
-    "it-pair": "^1.0.0",
+    "it-pair": "^2.0.2",
     "it-pipe": "^1.1.0",
     "streaming-iterables": "^6.0.0",
     "util": "^0.12.3"
