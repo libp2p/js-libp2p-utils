@@ -7,11 +7,11 @@ import { collect } from 'streaming-iterables'
 import { Multiaddr } from '@multiformats/multiaddr'
 import { streamToMaConnection } from '../src/stream-to-ma-conn.js'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
-import type { MuxedStream } from '@libp2p/interfaces/stream-muxer'
+import type { Stream } from '@libp2p/interfaces/connection'
 import type { Duplex } from 'it-stream-types'
 
 function toMuxedStream (stream: Duplex<Uint8Array>) {
-  const muxedStream: MuxedStream = {
+  const muxedStream: Stream = {
     ...stream,
     close: () => {},
     abort: () => {},
@@ -41,7 +41,6 @@ describe('Convert stream into a multiaddr connection', () => {
     expect(maConn).to.exist()
     expect(maConn.sink).to.exist()
     expect(maConn.source).to.exist()
-    expect(maConn.localAddr).to.eql(localAddr)
     expect(maConn.remoteAddr).to.eql(remoteAddr)
     expect(maConn.timeline).to.exist()
     expect(maConn.timeline.open).to.exist()
