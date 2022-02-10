@@ -3,10 +3,10 @@
 import { expect } from 'aegir/utils/chai.js'
 import { pair } from 'it-pair'
 import { pipe } from 'it-pipe'
-import { collect } from 'streaming-iterables'
 import { Multiaddr } from '@multiformats/multiaddr'
 import { streamToMaConnection } from '../src/stream-to-ma-conn.js'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
+import all from 'it-all'
 import type { Stream } from '@libp2p/interfaces/connection'
 import type { Duplex } from 'it-stream-types'
 
@@ -62,7 +62,7 @@ describe('Convert stream into a multiaddr connection', () => {
     const streamData = await pipe(
       [data],
       maConn,
-      collect
+      async (source) => await all(source)
     )
 
     expect(streamData).to.eql([data])
