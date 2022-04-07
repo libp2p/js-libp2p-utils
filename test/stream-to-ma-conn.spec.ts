@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-import { expect } from 'aegir/utils/chai'
+import { expect } from 'aegir/chai'
 import { pair } from 'it-pair'
 import { pipe } from 'it-pipe'
 import { Multiaddr } from '@multiformats/multiaddr'
