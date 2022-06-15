@@ -184,7 +184,7 @@
     "private-ip": "^2.1.1"
   },
   "devDependencies": {
-    "@libp2p/interfaces": "^1.0.3",
+    "@libp2p/interfaces": "^3.0.2",
     "aegir": "^37.2.0",
     "it-all": "^1.0.6",
     "it-pair": "^2.0.2",
