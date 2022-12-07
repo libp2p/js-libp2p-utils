@@ -184,12 +184,12 @@
     "err-code": "^3.0.1",
     "is-loopback-addr": "^2.0.1",
     "it-stream-types": "^1.0.4",
-    "private-ip": "^2.1.1",
+    "private-ip": "^3.0.0",
     "uint8arraylist": "^2.3.2"
   },
   "devDependencies": {
     "aegir": "^37.2.0",
-    "it-all": "^1.0.6",
+    "it-all": "^2.0.0",
     "it-map": "^2.0.0",
     "it-pair": "^2.0.2",
     "it-pipe": "^2.0.2",
