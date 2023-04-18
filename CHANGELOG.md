@@ -1,3 +1,17 @@
+## [3.0.8](https://github.com/libp2p/js-libp2p-utils/compare/v3.0.7...v3.0.8) (2023-04-12)
+
+
+### Dependencies
+
+* bump @libp2p/interface-connection from 3.1.1 to 4.0.0 ([#90](https://github.com/libp2p/js-libp2p-utils/issues/90)) ([d140507](https://github.com/libp2p/js-libp2p-utils/commit/d140507f1d4263886c515f4877425a01f28b88e7))
+
+## [3.0.7](https://github.com/libp2p/js-libp2p-utils/compare/v3.0.6...v3.0.7) (2023-03-31)
+
+
+### Dependencies
+
+* **dev:** bump it-pipe from 2.0.5 to 3.0.0 ([#87](https://github.com/libp2p/js-libp2p-utils/issues/87)) ([fc28634](https://github.com/libp2p/js-libp2p-utils/commit/fc286345ff55e23b7619da2bdcedfd848d7c1f85))
+
 ## [3.0.6](https://github.com/libp2p/js-libp2p-utils/compare/v3.0.5...v3.0.6) (2023-03-27)
 
 

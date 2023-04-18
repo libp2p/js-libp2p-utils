@@ -1,6 +1,6 @@
 {
   "name": "@libp2p/utils",
-  "version": "3.0.6",
+  "version": "3.0.8",
   "description": "Package to aggregate shared logic and dependencies for the libp2p ecosystem",
   "license": "Apache-2.0 OR MIT",
   "homepage": "https://github.com/libp2p/js-libp2p-utils#readme",
@@ -177,7 +177,7 @@
   },
   "dependencies": {
     "@achingbrain/ip-address": "^8.1.0",
-    "@libp2p/interface-connection": "^3.0.2",
+    "@libp2p/interface-connection": "^4.0.0",
     "@libp2p/interface-peer-store": "^1.2.1",
     "@libp2p/interfaces": "^3.2.0",
     "@libp2p/logger": "^2.0.0",
@@ -190,7 +190,7 @@
   },
   "devDependencies": {
     "aegir": "^38.1.7",
-    "it-all": "^2.0.0",
+    "it-all": "^3.0.1",
     "it-map": "^3.0.2",
     "it-pipe": "^3.0.0",
     "p-defer": "^4.0.0",
