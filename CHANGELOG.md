@@ -1,3 +1,15 @@
+## [3.0.13](https://github.com/libp2p/js-libp2p-utils/compare/v3.0.12...v3.0.13) (2023-07-20)
+
+
+### Trivial Changes
+
+* Update .github/workflows/stale.yml [skip ci] ([432da3a](https://github.com/libp2p/js-libp2p-utils/commit/432da3a75708a0b6ddf232b2de658c6654d4884a))
+
+
+### Dependencies
+
+* **dev:** bump aegir from 39.0.13 to 40.0.0 ([#101](https://github.com/libp2p/js-libp2p-utils/issues/101)) ([dbd7c31](https://github.com/libp2p/js-libp2p-utils/commit/dbd7c3138ca6f2dff181050b131ee057700e23ae))
+
 ## [3.0.12](https://github.com/libp2p/js-libp2p-utils/compare/v3.0.11...v3.0.12) (2023-06-15)
 
 
